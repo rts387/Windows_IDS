@@ -1,5 +1,9 @@
-#🛡️ Windows Intrusion Detection System (Windows IDS)
+🛡️ Windows Intrusion Detection System (Windows IDS)
 A comprehensive, real-time intrusion detection system for Windows with a modern GUI interface. Monitor file integrity, processes, network activity, and Windows event logs for security threats.
+
+https://img.shields.io/badge/Platform-Windows-blue
+https://img.shields.io/badge/Python-3.8%252B-green
+https://img.shields.io/badge/License-MIT-yellow
 
 ✨ Features
 🔍 File Integrity Monitoring - Real-time file change detection with SHA-256 hashing
@@ -18,7 +22,10 @@ A comprehensive, real-time intrusion detection system for Windows with a modern 
 
 🛠️ Configurable - YAML-based configuration for easy customization
 
-📋 Requirements
+📸 Screenshots
+GUI Interface showing real-time security alerts and monitoring dashboard
+
+📋 Prerequisites
 Windows 10/11 or Windows Server 2016+
 
 Python 3.8 or higher
@@ -27,41 +34,49 @@ Administrator privileges (for full monitoring capabilities)
 
 🚀 Quick Start
 Method 1: Automated Setup (Recommended)
-Download all project files to a folder (e.g., C:\Windows_IDS)
+Clone the repository
 
-Open PowerShell as Administrator
-
-Run the automated setup:
+bash
+git clone https://github.com/yourusername/windows-ids.git
+cd windows-ids
+Run the automated setup (PowerShell as Administrator)
 
 powershell
-.\Setup-IDS.ps1
+.\scripts\Setup-IDS.ps1
 Method 2: Manual Installation
-Install Python dependencies:
+Install Python dependencies
 
-powershell
-pip install psutil pywin32 pyyaml pillow watchdog scapy
-Run the IDS:
+bash
+pip install -r requirements.txt
+Run the IDS
 
-powershell
+bash
 # GUI Mode (Recommended)
 python main.py --gui
 
 # Console Mode
 python main.py --console
-📁 File Structure
+📁 Project Structure
 text
-Windows_IDS/
-├── main.py                 # Main application entry point
-├── ids_core.py            # Core IDS engine and monitoring logic
-├── gui.py                 # Modern GUI interface
-├── config.yaml            # Configuration settings
-├── alerts.log             # Security alerts log (auto-created)
-├── Install-IDS.ps1        # PowerShell installation script
-├── Start-IDS.ps1          # PowerShell launcher script
-├── Test-IDS.ps1           # System verification script
-└── Setup-IDS.ps1          # Complete setup script
+windows-ids/
+├── src/
+│   ├── main.py                 # Main application entry point
+│   ├── ids_core.py            # Core IDS engine and monitoring logic
+│   └── gui.py                 # Modern GUI interface
+├── config/
+│   └── config.yaml            # Configuration settings
+├── scripts/
+│   ├── Install-IDS.ps1        # PowerShell installation script
+│   ├── Start-IDS.ps1          # PowerShell launcher script
+│   ├── Test-IDS.ps1           # System verification script
+│   └── Setup-IDS.ps1          # Complete setup script
+├── docs/
+│   └── images/                # Screenshots and documentation assets
+├── logs/                      # Auto-created logs directory
+├── requirements.txt           # Python dependencies
+└── README.md                  # This file
 ⚙️ Configuration
-Edit config.yaml to customize monitoring:
+Edit config/config.yaml to customize monitoring:
 
 File Integrity Monitoring
 yaml
@@ -98,15 +113,11 @@ Starting the IDS
 Graphical Interface (Recommended):
 
 powershell
-python main.py --gui
+python src/main.py --gui
 Console Mode:
 
 powershell
-python main.py --console
-Service Mode:
-
-powershell
-python main.py --service
+python src/main.py --console
 Using the GUI
 Click "Start IDS" to begin monitoring
 
@@ -119,13 +130,15 @@ Configure settings in the "Configuration" tab
 Click "Stop IDS" to halt monitoring
 
 PowerShell Scripts
-.\Install-IDS.ps1 - Install dependencies
+All scripts are located in the scripts/ directory:
 
-.\Start-IDS.ps1 - Launch the IDS
+Install-IDS.ps1 - Install dependencies
 
-.\Test-IDS.ps1 - Verify installation
+Start-IDS.ps1 - Launch the IDS
 
-.\Setup-IDS.ps1 - Complete automated setup
+Test-IDS.ps1 - Verify installation
+
+Setup-IDS.ps1 - Complete automated setup
 
 🔧 Troubleshooting
 Common Issues
@@ -198,7 +211,7 @@ Alerts are logged to:
 
 Console (colored output)
 
-alerts.log file
+logs/alerts.log file
 
 Email (if configured)
 
@@ -216,15 +229,28 @@ Use App Passwords for email, not regular passwords
 Test in isolated environment before production use
 
 🤝 Contributing
+We welcome contributions! Please see our Contributing Guide for details.
+
 Fork the repository
 
-Create a feature branch
+Create a feature branch (git checkout -b feature/amazing-feature)
 
-Commit your changes
+Commit your changes (git commit -m 'Add some amazing feature')
 
-Push to the branch
+Push to the branch (git push origin feature/amazing-feature)
 
-Create a Pull Request
+Open a Pull Request
+
+🐛 Bug Reports
+Found a bug? Please open an issue and include:
+
+Windows version
+
+Python version
+
+Error message and stack trace
+
+Steps to reproduce
 
 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
@@ -241,5 +267,28 @@ Verify all dependencies are installed
 
 Ensure you're running as Administrator
 
-Check the alerts.log file for error details
+Check the logs/alerts.log file for error details
+
+Open an issue on GitHub
+
+Happy Monitoring! 🛡️
+
+📞 Contact
+GitHub: @yourusername
+
+Project Link: https://github.com/yourusername/windows-ids
+
+🙏 Acknowledgments
+psutil for process monitoring
+
+Scapy for network packet manipulation
+
+Watchdog for file system monitoring
+
+PyYAML for configuration management
+
+<div align="center">
+If you find this project useful, please give it a ⭐!
+
+</div>
 
